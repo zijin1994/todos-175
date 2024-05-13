@@ -1,3 +1,4 @@
+const config = require("./lib/config");
 const express = require("express");
 const morgan = require("morgan");
 // const TodoList = require("./lib/todolist");
@@ -12,8 +13,8 @@ const PgPersistence = require("./lib/pg-persistence");
 const catchError = require("./lib/catch-error");
 
 const app = express();
-const host = "localhost";
-const port = 8080;
+const host = config.HOST;
+const port = config.PORT;
 const LokiStore = store(session);
 
 // let todoLists = require("./lib/seed-data");
@@ -35,7 +36,7 @@ app.use(session({
   name: "launch-school-todos-session-id",
   resave: false,
   saveUninitialized: true,
-  secret: "this is not very secure",
+  secret: config.SECRET,
   store: new LokiStore({}),
 }));
 
