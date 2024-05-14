@@ -8,7 +8,8 @@
   },
   "scripts": {
     "heroku-postbuild": "npm install --production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node todos.js"
   },
   "author": "",
   "license": "ISC",
