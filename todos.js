@@ -202,7 +202,7 @@ app.post("/lists/:todoListId/todos/:todoId/toggle",
     
     if (!todoToggled) throw new Error("Not Found");
     let todo = await store.loadTodo(todoListId, todoId);
-    if (todo.isDone) {
+    if (todo.isdone) {
       req.flash("success", `"${todo.title}" marked done!`);
     } else {
       req.flash("success", `"${todo.title}" marked as NOT done!`);
